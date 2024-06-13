@@ -8,14 +8,16 @@ import {
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
 
-//const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1338";
+const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1338";
 export function makeClient() {
   // const httpLink = new HttpLink({
   //   uri: `${STRAPI_URL}/graphql`,
   // });
 
+
+
   const httpLink = new HttpLink({
-    uri: "http://localhost:1338/graphql",
+    uri: "http://localhost:1338/graphql" || STRAPI_URL+'/graphql',
   });
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
