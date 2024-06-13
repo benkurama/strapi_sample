@@ -17,7 +17,7 @@ export function makeClient() {
 
 
   const httpLink = new HttpLink({
-    uri: "http://localhost:1338/graphql" || STRAPI_URL+'/graphql',
+    uri: "https://strapi-sample-w3e4.onrender.com/graphql",
   });
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
